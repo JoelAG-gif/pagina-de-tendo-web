@@ -40,4 +40,6 @@ TENDŌ es una app Android para bodegueros y comerciantes de mercado.
 ---
 
 © 2026 **Novark S.A.C.** — Todos los derechos reservados.
+
+
 Desarrollado por [Jireh Aroni]
