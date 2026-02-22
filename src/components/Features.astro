@@ -1,0 +1,106 @@
+---
+const features = [
+  { icon: '🛒', title: 'Ventas Rápidas',       desc: 'Registra ventas en segundos. Busca productos por nombre, aplica descuentos, elige forma de pago. Todo desde una sola pantalla.',                                                        tag: 'Básico',   premium: false },
+  { icon: '📦', title: 'Control de Inventario', desc: 'Lleva el stock de todos tus productos. Alertas automáticas cuando el stock está por agotarse. Calcula costos promedio al comprar más mercadería.',                                    tag: 'Básico',   premium: false },
+  { icon: '📒', title: 'Fiados & Deudas',       desc: 'Registra quién te debe y cuánto. Historial de abonos, fechas, y estado de cada deuda. Nunca más pierdas la cuenta de tus fiados.',                                                  tag: 'Básico',   premium: false },
+  { icon: '📊', title: 'Reporte de Caja',       desc: 'Ve cuánto vendiste hoy, en la semana o en el mes. Desglose por efectivo, Yape/Plin y transferencia. Exporta y comparte por WhatsApp.',                                              tag: 'Básico',   premium: false },
+  { icon: '📱', title: 'WhatsApp Automático',   desc: 'Envía cobros, promociones y mensajes personalizados a tus clientes directo por WhatsApp con un solo toque.',                                                                        tag: 'Premium',  premium: true  },
+  { icon: '📈', title: 'Reportes Avanzados',    desc: 'Análisis detallados con gráficos, comparativas por periodo, productos más vendidos, ganancia neta y mucho más.',                                                                    tag: 'Premium',  premium: true  },
+  { icon: '💾', title: 'Copias de Seguridad',   desc: 'Respalda todos tus datos y restáuralos cuando cambies de celular o reinstales la app. Tus datos siempre seguros.',                                                                  tag: 'Premium',  premium: true  },
+  { icon: '🔒', title: 'Casi sin Internet',     desc: 'Ventas, inventario, fiados y reportes funcionan sin internet. Solo necesitas conexión para compartir reportes por WhatsApp o activar tu código por primera vez.',                   tag: 'Básico',   premium: false },
+];
+---
+
+<section class="features-bg" id="funciones">
+  <div class="section-label reveal">Lo que incluye</div>
+  <h2 class="section-title reveal">Todo lo que tu negocio necesita</h2>
+  <p class="section-desc reveal">Desde ventas hasta reportes, controla cada soleado de tu caja sin depender de internet ni de nadie más.</p>
+
+  <div class="features-grid">
+    {features.map((f) => (
+      <div class="feat-card-wrap reveal">
+        <div class="feat-card">
+          <span class="feat-icon">{f.icon}</span>
+          <div class="feat-title">{f.title}</div>
+          <div class="feat-desc">{f.desc}</div>
+          <span class={`feat-tag${f.premium ? ' premium' : ''}`}>{f.tag}</span>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+.features-bg {
+  background: linear-gradient(180deg,#0d0600 0%,#0a1f06 100%);
+  padding: 100px 60px;
+}
+.section-label {
+  font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 7px;
+  color: rgba(244,166,42,0.6); text-transform: uppercase;
+  text-align: center; margin-bottom: 16px;
+}
+.section-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(28px,4vw,44px); color: #fff;
+  text-align: center; margin-bottom: 16px; letter-spacing: 2px;
+}
+.section-desc {
+  font-size: 15px; color: rgba(255,255,255,0.4);
+  text-align: center; max-width: 540px;
+  margin: 0 auto 70px; line-height: 1.9; letter-spacing: 0.5px;
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 24px; max-width: 1200px; margin: 0 auto;
+}
+
+/* ── Borde RGB animado (técnica wrapper) ── */
+@keyframes neonRgbSpin {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes neonGlowPulse {
+  0%,100% { box-shadow: 0 0 10px rgba(232,83,26,0.55),0 0 25px rgba(232,83,26,0.25),0 8px 40px rgba(0,0,0,0.5); }
+  33%     { box-shadow: 0 0 10px rgba(244,166,42,0.8),0 0 25px rgba(244,166,42,0.35),0 8px 40px rgba(0,0,0,0.5); }
+  66%     { box-shadow: 0 0 10px rgba(39,174,96,0.7),0 0 25px rgba(39,174,96,0.3),0 8px 40px rgba(0,0,0,0.5); }
+}
+
+.feat-card-wrap {
+  border-radius: 21px; padding: 1.5px;
+  background: linear-gradient(270deg, #e8531a,#f4a62a,#f4d03f,#27ae60,#f4a62a,#e8531a);
+  background-size: 400% 400%;
+  animation: neonRgbSpin 5s ease infinite;
+  opacity: 0.5;
+  transition: opacity 0.3s, box-shadow 0.3s, transform 0.3s;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+}
+.feat-card-wrap:hover {
+  opacity: 1; transform: translateY(-6px);
+  animation: neonRgbSpin 2.5s ease infinite, neonGlowPulse 3s ease-in-out infinite;
+}
+.feat-card {
+  background: #0f180b; border-radius: 20px;
+  padding: 36px 32px; position: relative;
+  overflow: hidden; cursor: default; height: 100%;
+}
+.feat-card::before {
+  content: ''; position: absolute; inset: 0; border-radius: 20px;
+  background: radial-gradient(ellipse at 25% 25%,rgba(244,166,42,0.05),transparent 55%);
+  pointer-events: none;
+}
+.feat-icon  { font-size: 38px; margin-bottom: 20px; display: block; }
+.feat-title { font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 2px; color: #fff; margin-bottom: 12px; text-transform: uppercase; }
+.feat-desc  { font-size: 13.5px; color: rgba(255,255,255,0.45); line-height: 1.85; }
+.feat-tag {
+  display: inline-block; margin-top: 16px;
+  background: rgba(244,166,42,0.1); border: 1px solid rgba(244,166,42,0.2);
+  color: #f4a62a; font-family: 'Cinzel', serif; font-size: 8px; letter-spacing: 3px;
+  padding: 4px 12px; border-radius: 20px; text-transform: uppercase;
+}
+.feat-tag.premium { background: rgba(232,83,26,0.1); border-color: rgba(232,83,26,0.25); color: #e8531a; }
+
+@media (max-width: 768px) { .features-bg { padding: 80px 24px; } }
+</style>
