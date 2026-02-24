@@ -1,10 +1,10 @@
-# TENDŌ — Página Web Oficial
+# TENDŌ KŌRE — Página Web Oficial
 
 ![TENDŌ](https://img.shields.io/badge/TEND%C5%8C-Control%20Total-e8531a?style=for-the-badge&labelColor=0a1f06)
 ![Astro](https://img.shields.io/badge/Astro-4.0-ff5d01?style=for-the-badge&logo=astro&logoColor=white)
 ![Estado](https://img.shields.io/badge/Estado-Producción-27ae60?style=for-the-badge)
 
-Sitio web oficial de **TENDŌ**, app de gestión para negocios de mercado en Perú. Ventas, inventario, fiados y reportes sin depender de internet.
+Sitio web oficial de **TENDŌ KŌRE**, app de gestión para negocios de mercado en Perú. Ventas, inventario, fiados y reportes sin depender de internet.
 
 ---
 
@@ -39,7 +39,7 @@ TENDŌ es una app Android para bodegueros y comerciantes de mercado.
 
 ---
 
-© 2026 **Novark S.A.C.** — Todos los derechos reservados.
+© 2026 **Novark Systems** — Todos los derechos reservados.
 
 
 Desarrollado por [Jireh Aroni]
