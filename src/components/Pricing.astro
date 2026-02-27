@@ -1,8 +1,8 @@
 ---
 const WSP = '51960756758';
 
-const msgBasico  = encodeURIComponent('Hola! 😊 Vi la pagina de TENDŌ KŌRE y quiero el Plan Basico (S/ 300).\n\nMis consultas: 📋\n💳 Como realizo el pago?\n🔑 Como recibo mi codigo de activacion?\n✅ Puedo probarlo antes?\n\nGracias!');
-const msgPremium = encodeURIComponent('Hola! 😊 Vi la pagina de TENDŌ KŌRE y quiero el Plan Premium (S/ 400).\n\nMis consultas: 📋\n💳 Como realizo el pago?\n🔑 Como recibo mi codigo de activacion?\n⭐ Que incluye exactamente el Premium?\n\nGracias!');
+const msgBasico  = encodeURIComponent('Hola! 😊 Vi la pagina de TENDO y quiero el Plan Basico (S/ 300).\n\nMis consultas: 📋\n💳 Como realizo el pago?\n🔑 Como recibo mi codigo de activacion?\n✅ Puedo probarlo antes?\n\nGracias!');
+const msgPremium = encodeURIComponent('Hola! 😊 Vi la pagina de TENDO y quiero el Plan Premium (S/ 400).\n\nMis consultas: 📋\n💳 Como realizo el pago?\n🔑 Como recibo mi codigo de activacion?\n⭐ Que incluye exactamente el Premium?\n\nGracias!');
 ---
 
 <section class="pricing-bg" id="precios">
@@ -63,6 +63,13 @@ const msgPremium = encodeURIComponent('Hola! 😊 Vi la pagina de TENDŌ KŌRE y
     </div>
 
   </div>
+
+  <!-- T&C note -->
+  <p class="tyc-note reveal">
+    Al adquirir la app aceptas nuestros
+    <a href="/terminos" class="tyc-note-link">Términos y Condiciones</a>
+  </p>
+
 </section>
 
 <style>
@@ -158,6 +165,25 @@ const msgPremium = encodeURIComponent('Hola! 😊 Vi la pagina de TENDŌ KŌRE y
 .price-btn-b:hover { background: rgba(255,255,255,0.15); border-color: rgba(244,166,42,0.4); }
 .price-btn-p { background: linear-gradient(135deg,#e8531a,#f4a62a); color: #fff; border: none; box-shadow: 0 6px 20px rgba(232,83,26,0.5); }
 .price-btn-p:hover { box-shadow: 0 10px 35px rgba(232,83,26,0.7); transform: translateY(-2px); }
+
+.tyc-note {
+  text-align: center;
+  margin-top: 36px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 1px;
+  font-style: italic;
+}
+.tyc-note-link {
+  color: rgba(232,83,26,0.55);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(232,83,26,0.25);
+  transition: color 0.2s, border-color 0.2s;
+}
+.tyc-note-link:hover {
+  color: #e8531a;
+  border-color: rgba(232,83,26,0.6);
+}
 
 @media (max-width: 768px) {
   .pricing-bg { padding: 80px 24px; }

@@ -1,19 +1,25 @@
 ---
 const WSP = '51960756758';
+const msgGeneral = encodeURIComponent('Hola! 😊 Vi la pagina de TENDŌ KŌRE y me interesa la app.\n\nMis consultas: 📋\n📱 Como descargo la app?\n🔑 Como funciona la activacion?\n📊 Cual es la diferencia entre Basico y Premium?\n\nGracias!');
+
+// Si estamos en una subpágina, los links deben incluir /# en vez de solo #
+const currentPath = Astro.url.pathname;
+const isHome = currentPath === '/' || currentPath === '/index.html';
+const prefix = isHome ? '' : '/';
 ---
 
 <nav id="navbar">
-  <a class="nav-logo" href="#inicio">
+  <a class="nav-logo" href="/">
     <div class="nav-logo-dot"></div>
     TENDŌ KŌRE
   </a>
 
   <div class="nav-links">
-    <a href="#inicio">Inicio</a>
-    <a href="#funciones">Funciones</a>
-    <a href="#como-funciona">Como Funciona</a>
-    <a href="#precios">Precios</a>
-    <a href={`https://wa.me/${WSP}?text=${encodeURIComponent('Hola! 😊 Vi la pagina de TENDŌ KŌRE y me interesa la app.\n\nMis consultas: 📋\n📱 Como descargo la app?\n🔑 Como funciona la activacion?\n📊 Cual es la diferencia entre Basico y Premium?\n\nGracias!')}`}
+    <a href={`${prefix}#inicio`}>Inicio</a>
+    <a href={`${prefix}#funciones`}>Funciones</a>
+    <a href={`${prefix}#como-funciona`}>Como Funciona</a>
+    <a href={`${prefix}#precios`}>Precios</a>
+    <a href={`https://wa.me/${WSP}?text=${msgGeneral}`}
        target="_blank"
        class="nav-cta">
       Obtener App
@@ -29,11 +35,11 @@ const WSP = '51960756758';
 <div class="nav-mobile" id="mobileMenu">
   <div class="nav-mobile-logo">TENDŌ KŌRE</div>
   <div class="nav-mobile-sep"></div>
-  <a href="#inicio" class="mob-link">Inicio</a>
-  <a href="#funciones" class="mob-link">Funciones</a>
-  <a href="#como-funciona" class="mob-link">Como Funciona</a>
-  <a href="#precios" class="mob-link">Precios</a>
-  <a href={`https://wa.me/${WSP}?text=${encodeURIComponent('Hola! 😊 Vi la pagina de TENDŌ KŌRE y me interesa la app.\n\nMis consultas: 📋\n📱 Como descargo la app?\n🔑 Como funciona la activacion?\n📊 Cual es la diferencia entre Basico y Premium?\n\nGracias!')}`}
+  <a href={`${prefix}#inicio`} class="mob-link">Inicio</a>
+  <a href={`${prefix}#funciones`} class="mob-link">Funciones</a>
+  <a href={`${prefix}#como-funciona`} class="mob-link">Como Funciona</a>
+  <a href={`${prefix}#precios`} class="mob-link">Precios</a>
+  <a href={`https://wa.me/${WSP}?text=${msgGeneral}`}
      target="_blank"
      class="mob-cta">
     Obtener App
@@ -160,14 +166,12 @@ nav::after {
   const menu = document.getElementById('mobileMenu')!;
   const navbar = document.getElementById('navbar')!;
 
-  // Hamburger toggle
   ham.addEventListener('click', () => {
     ham.classList.toggle('open');
     menu.classList.toggle('open');
     document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
   });
 
-  // Cerrar al hacer click en link del menú móvil
   menu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       ham.classList.remove('open');
@@ -176,7 +180,6 @@ nav::after {
     });
   });
 
-  // Nav scroll effect
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
       navbar.style.padding = '14px 60px';
