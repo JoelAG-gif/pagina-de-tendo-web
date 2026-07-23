@@ -93,7 +93,7 @@ Realiza tu pago por Yape / Plin / Transferencia → recibe tu **código de activ
 
 ## 💎 Planes y Precios
 
-### 📦 Plan Básico — S/ 300 *(Pago único)*
+### 📦 Plan Básico — S/ 50 *(Pago único)*
 - ✅ Ventas ilimitadas
 - ✅ Control de inventario completo
 - ✅ Fiados y cuentas por cobrar
@@ -105,7 +105,7 @@ Realiza tu pago por Yape / Plin / Transferencia → recibe tu **código de activ
 - ❌ Reportes avanzados con gráficos
 - ❌ Backup en la nube
 
-### 👑 Plan Premium — S/ 400 *(Pago único)*
+### 👑 Plan Premium — S/ 80 *(Pago único)*
 - ✅ **Todo lo del Plan Básico**
 - ✦ **WhatsApp Automático** — cobros y promociones masivas
 - ✦ **Reportes Avanzados** — gráficos, comparativas, análisis detallado
